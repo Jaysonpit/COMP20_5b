@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+     <meta charset="utf-8">
+    <title> Lottery </title>
+    </head>
+
+    <body>
+        <header> <h1> Lottery Results </h1>
+        </header>
+
+    <script language="javascript">
+        var quick_pick = [], winners = [], luckynumber, luckynumber_user, user_input, match = 0,
+        luckymatch = false; 
+
+        user_input = prompt("Enter 5 winning numbers seperated by a space");
+        luckynumber_user = prompt("Enter your lucky ball number");
+
+    
+
+
+        for (var i = 0; i < 5; i++){
+            quick_pick[i] = Math.floor(Math.random()*48) + 1;
+        }
+        luckynumber = Math.floor(Math.random()*18 )+1; 
+        
+
+        document.write("Your quick pick numbers are: ");
+        for (var i = 0; i<quick_pick.length; i++){
+            document.write(quick_pick[i] + " ");
+
+        }
+
+        document.write("</br> Your lucky number is: " + luckynumber);
+
+        document.write("</br> The winning numbers are: " + user_input);
+        user_input = user_input.split(" ");
+       ;
+        for (var i = 0; i<user_input.length; i++){
+            winners.push(user_input[i]);
+        }
+
+        for (i = 0; i < winners.length; i++){
+            for (j = 0; j<quick_pick.length; j++){
+                if (winners[i] == quick_pick[j])[
+                    match++ 
+                ]
+            }
+        }
+        if (luckynumber == luckynumber_user){
+            match += .5;  
+        }
+       // document.write("</br>" + match);
+
+        switch(match){
+
+            case .5: 
+                document.write("</br> Match: 0 + Lucky Ball  </br>  Winnings: $4");
+                break;
+
+            case 1.5:
+                 document.write("</br> Match: 1 + Lucky Ball  </br>  Winnings: $6");
+                 break;
+
+            case 2:
+                document.write("</br> Matches: 2   </br>  Winnings: $6");
+                break;
+
+            case 2.5:
+                 document.write("</br> Matches: 2 + Lucky Ball   </br>  Winnings: $25");
+                 break;
+
+            case 3:
+                document.write("</br> Matches: 3   </br>  Winnings: $20");
+                break;
+            
+            case 3.5:
+                document.write("</br> Matches: 3 + Lucky Ball   </br>  Winnings: $150");
+                break;
+            
+            case 4:
+                document.write("</br> Matches: 4    </br>  Winnings: $200");
+                break;
+
+            case 4.5:
+                document.write("</br> Matches: 4 + Lucky Ball   </br>    Winnings: $5,000");
+                break;
+
+            case 5:
+                document.write("</br> Matches: 5    </br>   Winnings: $25,000 a YEAR for LIFE");
+                break;
+
+            case 5.5:
+                document.write("</br> Matches: 5 + Lucky Ball    </br>   Winnings: $7,000 a WEEK for LIFE");
+                break;
+
+            default:
+                document.write("</br> Matches: 0 </br> Sorry, you did not win.");
+                break;
+
+        
+        }
+
+
+
+
+       // document.write("</br>" + luckymatch);
+
+        
+
+
+
+        
+
+      
+        
+
+        
+
+
+    </script>
+
+
+    </body> 
+
+</html>
